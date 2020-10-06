@@ -241,6 +241,8 @@ GameObject:
   - component: {fileID: 697132407}
   - component: {fileID: 697132406}
   - component: {fileID: 697132405}
+  - component: {fileID: 697132409}
+  - component: {fileID: 697132408}
   m_Layer: 0
   m_Name: CapsuleBody
   m_TagString: Untagged
@@ -323,6 +325,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697132403}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &697132408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697132403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401b0d17f78f7d04195c5109c8d99b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5.5
+--- !u!143 &697132409
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697132403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &785891719
 GameObject:
   m_ObjectHideFlags: 0
