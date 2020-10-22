@@ -1,26 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicMovement : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 5.5f;
+    private float speed = 10f;
 
-    private CharacterController characterController;
+    private Rigidbody rigidBody;
+    
     private Vector3 moveDirection = Vector3.zero;
+    private float horizontalMovement;
+    private float verticalMovement;
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    // FixedUpdate() is used for PHYSICS CALCULATION
+    void FixedUpdate()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        moveDirection *= speed;
+        CalculateMovement();
+    }
 
-        characterController.Move(moveDirection * Time.deltaTime);
+    void CalculateMovement() {
+        horizontalMovement = Input.GetAxisRaw("Horizontal");
+        verticalMovement = Input.GetAxisRaw("Vertical");
+        moveDirection = new Vector3(horizontalMovement, 0.0f, verticalMovement);
+
+        rigidBody.AddForce(moveDirection * speed);
     }
 
 }
